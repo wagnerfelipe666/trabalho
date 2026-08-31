@@ -18,24 +18,24 @@ int main (){
     printf("Digite seu sexo (M/F): ");
     scanf(" %c", &sexo);
     if (idade >= 18) {
-        printf("Você é maior de idade.\n");
+        printf("VocÃª Ã© maior de idade.\n");
     } else {
-        printf("Você é menor de idade.\n");
+        printf("VocÃª Ã© menor de idade.\n");
     }
-    printf("Escolha uma opção (1-Estudante, 2-Trabalhador, 3-Outro): ");
+    printf("Escolha uma opÃ§Ã£o (1-Estudante, 2-Trabalhador, 3-Outro): ");
     scanf("%d", &opcao);
     switch (opcao) {
         case 1:
-            printf("Você é estudante.\n");
+            printf("VocÃª Ã© estudante.\n");
             break;
         case 2:
-            printf("Você é trabalhador.\n");
+            printf("VocÃª Ã© trabalhador.\n");
             break;
         case 3:
-            printf("Você é de outra categoria.\n");
+            printf("VocÃª Ã© de outra categoria.\n");
             break;
         default:
-            printf("Opção inválida.\n");
+            printf("OpÃ§Ã£o invÃ¡lida.\n");
             break;
     }
     printf("\nResumo dos dados:\n");
