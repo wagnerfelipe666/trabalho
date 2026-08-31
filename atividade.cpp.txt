@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<locale.h>
+
+int main (){
+    setlocale(LC_ALL,"Portuguese");
+
+    int idade;
+    char sexo;
+    char nome[40];
+    float altura;
+    int opcao;
+    printf("Digite seu nome: ");
+    scanf(" %[^\n]", nome);
+    printf("Digite sua idade: ");
+    scanf("%d", &idade);
+    printf("Digite sua altura (ex: 1.75): ");
+    scanf("%f", &altura);
+    printf("Digite seu sexo (M/F): ");
+    scanf(" %c", &sexo);
+    if (idade >= 18) {
+        printf("Você é maior de idade.\n");
+    } else {
+        printf("Você é menor de idade.\n");
+    }
+    printf("Escolha uma opção (1-Estudante, 2-Trabalhador, 3-Outro): ");
+    scanf("%d", &opcao);
+    switch (opcao) {
+        case 1:
+            printf("Você é estudante.\n");
+            break;
+        case 2:
+            printf("Você é trabalhador.\n");
+            break;
+        case 3:
+            printf("Você é de outra categoria.\n");
+            break;
+        default:
+            printf("Opção inválida.\n");
+            break;
+    }
+    printf("\nResumo dos dados:\n");
+    printf("Nome: %s\n", nome);
+    printf("Idade: %d\n", idade);
+    printf("Altura: %.2f m\n", altura);
+    printf("Sexo: %c\n", sexo);
+    return 0;
+}
