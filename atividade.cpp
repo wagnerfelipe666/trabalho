@@ -1,47 +1,48 @@
-#include<stdio.h>
-#include<locale.h>
+#include <stdio.h>
+#include <locale.h>
+int main() {
+	setlocale(LC_ALL, "portuguese");
+    int escolha;       // guarda a opção escolhida
+    float valor;       // valor a ser convertido
+    float resultado;   // resultado da conversão
+    char unidade;      // unidade escolhida
 
-int main (){
-    setlocale(LC_ALL,"Portuguese");
+    printf("=== Conversor Simples ===\n");
+    printf("1 - Celsius para Fahrenheit\n");
+    printf("2 - Fahrenheit para Celsius\n");
+    printf("3 - Metros para Centímetros\n");
+    printf("4 - Centímetros para Metros\n");
+    printf("Escolha uma opção: ");
+    scanf("%d", &escolha);
 
-    int idade;
-    char sexo;
-    char nome[40];
-    float altura;
-    int opcao;
-    printf("Digite seu nome: ");
-    scanf(" %[^\n]", nome);
-    printf("Digite sua idade: ");
-    scanf("%d", &idade);
-    printf("Digite sua altura (ex: 1.75): ");
-    scanf("%f", &altura);
-    printf("Digite seu sexo (M/F): ");
-    scanf(" %c", &sexo);
-    if (idade >= 18) {
-        printf("Você é maior de idade.\n");
+    if (escolha == 1) {
+        printf("Digite a temperatura em Celsius: ");
+        scanf("%f", &valor);
+        resultado = (valor * 9/5) + 32;
+        printf("Resultado: %.2f °F\n", resultado);
+    } else if (escolha == 2) {
+        printf("Digite a temperatura em Fahrenheit: ");
+        scanf("%f", &valor);
+        resultado = (valor - 32) * 5/9;
+        printf("Resultado: %.2f °C\n", resultado);
+    } else if (escolha == 3 || escolha == 4) {
+        printf("Digite o valor: ");
+        scanf("%f", &valor);
+        switch (escolha) {
+            case 3:
+                resultado = valor * 100;
+                unidade = 'c'; // centímetros
+                printf("Resultado: %.2f %c\n", resultado, unidade);
+                break;
+            case 4:
+                resultado = valor / 100;
+                unidade = 'm'; // metros
+                printf("Resultado: %.2f %c\n", resultado, unidade);
+                break;
+        }
     } else {
-        printf("Você é menor de idade.\n");
+        printf("Opção inválida!\n");
     }
-    printf("Escolha uma opção (1-Estudante, 2-Trabalhador, 3-Outro): ");
-    scanf("%d", &opcao);
-    switch (opcao) {
-        case 1:
-            printf("Você é estudante.\n");
-            break;
-        case 2:
-            printf("Você é trabalhador.\n");
-            break;
-        case 3:
-            printf("Você é de outra categoria.\n");
-            break;
-        default:
-            printf("Opção inválida.\n");
-            break;
-    }
-    printf("\nResumo dos dados:\n");
-    printf("Nome: %s\n", nome);
-    printf("Idade: %d\n", idade);
-    printf("Altura: %.2f m\n", altura);
-    printf("Sexo: %c\n", sexo);
+
     return 0;
 }
