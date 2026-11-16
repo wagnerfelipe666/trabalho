@@ -1,0 +1,384 @@
+WAGNER FELIPE LIMA DA SILVA                                      RA:26012632-2
+Questão 1 – Calculadora com validação
+Faça um programa que solicite dois números e apresente um menu com as operações:
+
+Soma
+
+Subtração
+
+Multiplicação
+
+Divisão
+
+Utilize switch case para realizar a operação escolhida.
+
+Atenção às regras:
+
+Se o usuário escolher uma opção diferente de 1 a 4, mostre "Opção inválida".
+
+Se tentar dividir por zero, mostre "Não é possível dividir por zero".
+
+O programa deverá mostrar o resultado correto da operação.
+resposta
+c
+#include <stdio.h>
+#include <locale.h>
+int main() {
+	setlocale(LC_ALL, "portuguese");
+    int escolha;       // guarda a opção escolhida
+    float valor,valor_1;       // valor a ser convertido
+    float resultado;   // resultado da conversão
+   
+
+    printf("=== Conversor Simples ===\n");
+    printf("1 - soma\n");
+    printf("2 - subtração\n");
+    printf("3 - divisão\n");
+    printf("4 - multiplicação\n");
+    printf("Escolha uma opção: ");
+    scanf("%d", &escolha);
+
+    if (escolha == 1) {
+        printf("digite um numero: ");
+        scanf("%f", &valor);
+        printf("digite um numero: ");
+        scanf("%f", &valor_1);
+        resultado = valor + valor_1;
+        printf("Resultado: %.2f °F\n", resultado);
+    } else if (escolha == 2) {
+        printf("digite um numero: ");
+        scanf("%f", &valor);
+        printf("digite um numero: ");
+        scanf("%f", &valor_1);
+        resultado = valor - valor_1;
+        printf("Resultado: %.2f °F\n", resultado);
+    } else if (escolha == 3 ) {
+         printf("digite um numero: ");
+        scanf("%f", &valor);
+        printf("digite um numero: ");
+        scanf("%f", &valor_1);
+        resultado = valor / valor_1;
+        printf("Resultado: %.2f °F\n", resultado);
+       if(valor == 0 ||valor_1== 0){
+           printf("não e possivel dividir por zero");
+       }
+    } else if(escolha==4){
+         printf("digite um numero: ");
+        scanf("%f", &valor);
+        printf("digite um numero: ");
+        scanf("%f", &valor_1);
+        resultado = valor * valor_1;
+        printf("Resultado: %.2f °F\n", resultado);
+    }
+
+    return 0;
+}
+
+Questão 2 – Qual será a saída?)
+Observe o código:
+
+
+c
+#include <stdio.h>
+
+int main() {
+    int i;
+
+    for (i = 1; i <= 10; i++) {
+        printf("%d ", i);
+        i++;
+    }
+
+    return 0;
+}
+Responda:
+
+a) Quais números serão exibidos?
+13579
+b) Quantas vezes o laço será executado?
+5
+c) Por que os números não aparecem em sequência?
+são impares
+Questão 3 – Descubra o resultado (Operadores)
+Analise o código:
+
+
+c
+#include <stdio.h>
+
+int main() {
+    int a = 10;
+    int b = 3;
+    int c = 2;
+
+    int resultado = a + b * c - 4;
+
+    printf("%d", resultado);
+
+    return 0;
+}
+Responda:
+
+a) Qual será o resultado exibido?
+12
+b) Qual operação será realizada primeiro?
+B*C
+c) Por que não podemos simplesmente calcular da esquerda para a direita?
+regra de expressão
+
+Questão 4 – Laço infinito ou não?
+Observe o código:
+
+
+c
+#include <stdio.h>
+
+int main() {
+    int i = 10;
+
+    while (i >= 1) {
+        printf("%d ", i);
+        i--;
+    }
+
+    return 0;
+}
+Responda:
+
+a) Qual será o primeiro número exibido?
+10
+b) Qual será o último número exibido?
+1
+c) Quantas vezes o while será executado?
+10
+d) O que aconteceria se trocássemos i-- por i++?
+iria se tornar infinito
+
+Questão 5 – Desafio do do while
+Analise o código:
+
+
+c
+#include <stdio.h>
+
+int main() {
+    int i = 1;
+
+    do {
+        printf("%d ", i);
+        i++;
+
+    } while (i < 5);
+
+    return 0;
+}
+Responda:
+
+a) Quais números serão exibidos?
+1,2,3,4
+b) Quantas vezes o laço será executado?
+4
+c) Qual a diferença entre while e do while?
+
+
+Questão 6 – Condições com operadores lógicos
+
+Faça um programa que solicite a idade de uma pessoa.
+
+O programa deverá mostrar:
+
+"Criança" se a idade for menor que 12.
+
+"Adolescente" se a idade estiver entre 12 e 17.
+
+"Adulto" se a idade estiver entre 18 e 59.
+
+"Idoso" se a idade for igual ou maior que 60.
+
+Pegadinha: Se o usuário digitar uma idade menor que zero, mostre "Idade inválida".
+
+Utilize if, else if e else
+resposta
+c 
+#include <stdio.h>
+
+int main() {
+    int x;
+      printf("digite uma idade: ");
+      scanf("%d",&x);
+    if (x >= 0 && x < 11) {
+        printf("crianca");
+    }
+
+    else if (x >=12 && x <=17) {
+        printf("adolescente");
+    } 
+	else if (x >=18 && x <= 24){
+        printf("jovem");
+    }
+    else if (x >=24 && x <= 59){
+    	printf("adulto");
+	}
+	else if (x >=59 && x <= 130){
+    	printf("idoso");
+	}
+	else {
+		printf("idade invalida");
+	}
+
+    return 0;
+}
+
+
+Questão 7 – Qual será a saída? 
+Observe o código:
+
+c
+#include <stdio.h>
+
+int main() {
+    int x = 10;
+
+    if (x > 5) {
+        printf("A");
+    }
+
+    if (x > 8) {
+        printf("B");
+    } else {
+        printf("C");
+    }
+
+    return 0;
+}
+Responda:
+
+a) O que será exibido na tela?
+ab
+b) Por que a letra C será ou não exibida?
+o x e maior que 5
+c) Quantos comandos if existem no código?
+2
+
+Questão 8 – Tabuada com desafio
+Faça um programa que solicite um número ao usuário e mostre sua tabuada de 1 até 10.
+
+Porém, o programa deverá:
+
+Não mostrar a multiplicação quando o resultado for igual a 20.
+
+Parar completamente quando o resultado for igual a 40.
+
+Obrigatório: Utilize for, if, continue e break.
+
+resposta
+c
+#include <stdio.h>
+
+int main() {
+    int a, i;
+    char continuar;
+
+    printf("Tabuada classica\n");
+
+    do {
+        printf("\nEscolha a tabuada: ");
+        scanf("%d", &a);
+
+        printf("\nTabuada do %d:\n", a);
+
+        for (i = 1; i <= 10; i++) {
+            
+        if (a*i==20){
+        	i++;
+		}printf("%d x %d = %d\n", a, i, a * i);
+		if (a*i == 40){
+			break;
+		}
+        }
+        printf("\nDeseja calcular outra tabuada? (s/n): ");
+        scanf(" %c", &continuar);
+
+    } while (continuar == 's' || continuar == 'S');
+
+    printf("\nPrograma encerrado!\n");
+
+    return 0;
+}
+
+
+Questão 9 – Soma 
+Analise o código:
+
+#include <stdio.h>
+
+int main() {
+    int i;
+    int soma = 0;
+
+    for (i = 1; i <= 5; i++) {
+        soma = soma + i;
+    }
+
+    printf("%d", soma);
+
+    return 0;
+}
+Responda:
+
+a) Qual será o resultado exibido?
+15
+b) Quantas vezes o laço será executado?
+5
+c) Qual será o valor da variável soma na terceira execução?
+6
+d) O que aconteceria se a variável soma fosse iniciada com 10 em vez de 0?
+o valor final seria 25
+Questão 10 – Desafio final (Misturando tudo)
+Faça um programa que percorra os números de 1 até 50 utilizando for.
+
+O programa deverá seguir as seguintes regras:
+
+Se o número for par, mostre "PAR".
+
+Se o número for ímpar, mostre "IMPAR".
+
+Se o número for divisível por 5, mostre "MULTIPLO DE 5" no lugar das mensagens anteriores.
+
+Quando encontrar o número 30, o programa deverá parar.
+
+Obrigatório: Utilize for, if, else e break.
+
+Ao final, mostre quantos números foram verificados.
+
+Questão bônus – A pegadinha do professor!
+Observe com muita atenção:
+
+
+c
+#include <stdio.h>
+
+int main() {
+    int i = 1;
+
+    for (i = 1; i <= 5; i++) {
+        if (i == 3) {
+            i++;
+        }
+
+        printf("%d ", i);
+    }
+
+    return 0;
+}
+Responda:
+
+a) Qual será a saída completa?
+1245
+b) O número 3 será exibido?
+não
+c) Quantas vezes o laço será executado?
+5
+d) Explique por que o incremento acontece mais de uma vez em determinada execução.
+por que e uma crescente 
+
